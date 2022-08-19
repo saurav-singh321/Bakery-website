@@ -1,0 +1,3 @@
+this is static file and we put the text in this file which we want to show users.
+never put anything in static file which is sensitive and you don't want others to see
+

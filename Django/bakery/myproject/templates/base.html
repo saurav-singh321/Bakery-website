@@ -1,0 +1,94 @@
+{% comment %} i want the header and footer same in all the pages. this is called template inheritence {% endcomment %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title> {% block title %}{% endblock title %}|Saurav bakery Website</title>
+    <style>
+      .button,.bt2 {
+            background-color:#fb5656;
+            color:Black;
+            width:11rem;
+            height:3rem;
+            text-align:center;
+            font-weight:bold;
+            border:None;
+            border-radius:5px;
+      }
+      .button:hover{
+            background-color:#fff;
+      }
+      .bt2{
+        background-color:#fff;!important
+      }
+      .bt2:hover{
+        background-color:#fb5656;
+      }
+
+      .color-red{
+        color:#ff3355;
+      }
+
+      .story-same-text{
+        font-size:15px;
+      }
+    </style>
+  </head>
+
+
+  <body style = "background-color: #0d0d0d">
+  
+  {% comment %} this is navbar {% endcomment %}
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+        <img src="static/images/logo.webp" alt="logo" width="30" height="30" class="d-inline-block align-text-top">
+         Singh's Bakery
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/services">Services</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact Us</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+          <a href="/services" class="btn btn-outline-success" onclcick="/services" type="submit">ORDER</a>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+<!--above code remains the same in every page. Here we add different body to different pages.-->
+{% block body %}
+
+{% endblock body %}
+<footer class="text-white-50 text-center"style="height:46px">
+    <p style="margin-top:None;margin-bottom:None"> &copy2021 Copyright: Singh's Bakery
+      <a href="#"><small style="color:white"><img src="static/images/logo.webp" alt="logo" width="30" height="30"></small></a>
+    </p>
+</footer>
+ </body>
+</html>
+
